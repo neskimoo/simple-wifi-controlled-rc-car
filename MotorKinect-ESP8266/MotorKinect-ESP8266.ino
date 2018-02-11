@@ -32,18 +32,14 @@ int steeringPower = 1023;
 // ----------------
 // Set your WiFi SSID and Password here
 // ----------------
-const char* ssid = "brian";
-const char* password = "brianbrian";
+const char* ssid = "SSIDHERE";
+const char* password = "PWHERE";
 
 ESP8266WebServer server(80);
 
-const char *webpage = 
-#include "motorPage.h"
-;
-
 void handleRoot() {
 
-  server.send(200, "text/html", webpage);
+  server.send(200, "text/html", "<html><head><title>Use Kinect</title></head><body><h3>Use the kinect to control the car. Use the IP in serial monitor as ipFromESP8266 variable in Kinect project.</h3></body></html>");
 }
 
 void handleNotFound(){
@@ -100,10 +96,10 @@ void setup(void){
     server.send(200, "text/plain", "forward");
   });
 
-  server.on("/driveStop", [](){
-    Serial.println("driveStop");
+  server.on("/stopped", [](){
+    Serial.println("stopped");
     analogWrite(DRIVE_MOTOR_POWER, 0);
-    server.send(200, "text/plain", "driveStop");
+    server.send(200, "text/plain", "stopped");
   });
 
   server.on("/back", [](){
@@ -127,10 +123,10 @@ void setup(void){
     server.send(200, "text/plain", "left");
   });
 
-  server.on("/steerStop", [](){
-    Serial.println("steerStop");
+  server.on("/center", [](){
+    Serial.println("center");
     analogWrite(STEER_MOTOR_POWER, 0);
-    server.send(200, "text/plain", "steerStop");
+    server.send(200, "text/plain", "center");
   });
 
   server.onNotFound(handleNotFound);
