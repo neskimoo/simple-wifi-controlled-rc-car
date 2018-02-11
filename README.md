@@ -29,14 +29,14 @@ Update ipFromESP8266 with IP from Serial Console in ESP8266.
 # Controls:
 
 ### Motion:
-Both hands Raised in red = Forwards
-Both hands lowered in red = Backwards
-One Hand raised in Red and one hand lowered in red = Stopped
+- Both hands Raised in red = Forwards
+- Both hands lowered in red = Backwards
+- One Hand raised in Red and one hand lowered in red = Stopped
 
 ### Turning:
-Left hand in lower blue and right hand in upper blue = left
-Right hand in lower blue and left hand in upper blue = right
-Both hands in middle green = Centered
+- Left hand in lower blue and right hand in upper blue = left
+- Right hand in lower blue and left hand in upper blue = right
+- Both hands in middle green = Centered
 
 # Credits
 - https://github.com/witnessmenow/simple-wifi-controlled-rc-car
